@@ -4,7 +4,7 @@
     <root_name>mods</root_name>
     <schema_uri/>
     <namespaces default="http://www.loc.gov/mods/v3">
-      <namespace prefix="flvc">info:flvc/manifest/v1</namespace>
+      <namespace prefix="copyrightMD">http://www.cdlib.org/groups/rmg/docs/copyrightMD.xsd</namespace>
       <namespace prefix="mods">http://www.loc.gov/mods/v3</namespace>
       <namespace prefix="xsi">http://www.w3.org/2001/XMLSchema-instance</namespace>
       <namespace prefix="xlink">http://www.w3.org/1999/xlink</namespace>
@@ -36,215 +36,6 @@
       </actions>
     </properties>
     <children>
-      <element name="extension">
-        <properties>
-          <type>fieldset</type>
-          <access>TRUE</access>
-          <collapsed>FALSE</collapsed>
-          <collapsible>FALSE</collapsible>
-          <disabled>FALSE</disabled>
-          <executes_submit_callback>FALSE</executes_submit_callback>
-          <multiple>FALSE</multiple>
-          <required>FALSE</required>
-          <resizable>FALSE</resizable>
-          <tree>TRUE</tree>
-          <actions>
-            <create>
-              <path>/mods:mods</path>
-              <context>document</context>
-              <schema/>
-              <type>element</type>
-              <prefix>NULL</prefix>
-              <value>extension</value>
-            </create>
-            <read>
-              <path>/mods:mods/mods:extension</path>
-              <context>document</context>
-            </read>
-            <update>NULL</update>
-            <delete>NULL</delete>
-          </actions>
-        </properties>
-        <children>
-          <element name="flvc">
-            <properties>
-              <type>fieldset</type>
-              <access>TRUE</access>
-              <required>FALSE</required>
-              <title>Local fields</title>
-              <tree>TRUE</tree>
-              <actions>
-                <create>
-                  <path>self::node()</path>
-                  <context>parent</context>
-                  <schema/>
-                  <type>element</type>
-                  <prefix>flvc</prefix>
-                  <value>flvc:flvc</value>
-                </create>
-                <read>
-                  <path>flvc:flvc</path>
-                  <context>parent</context>
-                </read>
-                <update>NULL</update>
-                <delete>NULL</delete>
-              </actions>
-            </properties>
-            <children>
-              <element name="owningInst">
-                <properties>
-                  <type>select</type>
-                  <access>TRUE</access>
-                  <collapsed>FALSE</collapsed>
-                  <collapsible>FALSE</collapsible>
-                  <description>The institution that owns the digital object.</description>
-                  <disabled>FALSE</disabled>
-                  <executes_submit_callback>FALSE</executes_submit_callback>
-                  <multiple>FALSE</multiple>
-                  <options>
-                    <Broward>Broward College</Broward>
-                    <FAMU>Florida A&amp;M University</FAMU>
-                    <FAU>Florida Atlantic University</FAU>
-                    <FGCU>Florida Gulf Coast University</FGCU>
-                    <FIU>Florida International University</FIU>
-                    <FLVC>Florida Virtual Campus</FLVC>
-                    <FSU>Florida State University</FSU>
-                    <GCSC>Gulf Coast State College</GCSC>
-                    <NCF>New College of Florida</NCF>
-                    <NWFSC>Northwest Florida State College</NWFSC>
-                    <UCF>University of Central Florida</UCF>
-                    <UF>University of Florida</UF>
-                    <UNF>University of North Florida</UNF>
-                    <USF>University of South Florida</USF>
-                    <UWF>University of West Florida</UWF>
-                  </options>
-                  <required>TRUE</required>
-                  <resizable>FALSE</resizable>
-                  <title>Owning institution</title>
-                  <tree>TRUE</tree>
-                  <actions>
-                    <create>
-                      <path>self::node()</path>
-                      <context>parent</context>
-                      <schema/>
-                      <type>element</type>
-                      <prefix>flvc</prefix>
-                      <value>flvc:owningInstitution</value>
-                    </create>
-                    <read>
-                      <path>flvc:owningInstitution</path>
-                      <context>parent</context>
-                    </read>
-                    <update>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </update>
-                    <delete>NULL</delete>
-                  </actions>
-                </properties>
-                <children/>
-              </element>
-              <element name="submittingInst">
-                <properties>
-                  <type>select</type>
-                  <access>TRUE</access>
-                  <collapsed>FALSE</collapsed>
-                  <collapsible>FALSE</collapsible>
-                  <description>The institution submitting the digital object for ingest.</description>
-                  <disabled>FALSE</disabled>
-                  <executes_submit_callback>FALSE</executes_submit_callback>
-                  <multiple>FALSE</multiple>
-                  <options>
-                    <Broward>Broward College</Broward>
-                    <FAMU>Florida A&amp;M University</FAMU>
-                    <FAU>Florida Atlantic University</FAU>
-                    <FGCU>Florida Gulf Coast University</FGCU>
-                    <FIU>Florida International University</FIU>
-                    <FLVC>Florida Virtual Campus</FLVC>
-                    <FSU>Florida State University</FSU>
-                    <GCSC>Gulf Coast State College</GCSC>
-                    <NCF>New College of Florida</NCF>
-                    <index key="">Select</index>
-                    <NWFSC>Northwest Florida State College</NWFSC>
-                    <UCF>University of Central Florida</UCF>
-                    <UF>University of Florida</UF>
-                    <UNF>University of North Florida</UNF>
-                    <USF>University of South Florida</USF>
-                    <UWF>University of West Florida</UWF>
-                  </options>
-                  <required>FALSE</required>
-                  <resizable>FALSE</resizable>
-                  <title>Submitting institution</title>
-                  <tree>TRUE</tree>
-                  <actions>
-                    <create>
-                      <path>self::node()</path>
-                      <context>parent</context>
-                      <schema/>
-                      <type>element</type>
-                      <prefix>flvc</prefix>
-                      <value>flvc:submittingInstitution</value>
-                    </create>
-                    <read>
-                      <path>flvc:submittingInstitution</path>
-                      <context>parent</context>
-                    </read>
-                    <update>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </update>
-                    <delete>NULL</delete>
-                  </actions>
-                </properties>
-                <children/>
-              </element>
-              <element name="otherLogo">
-                <properties>
-                  <type>tags</type>
-                  <access>TRUE</access>
-                  <description>The name of a logo to display with the object, in addition to the logo of the owning institution.</description>
-                  <required>FALSE</required>
-                  <title>Other logo</title>
-                  <tree>TRUE</tree>
-                </properties>
-                <children>
-                  <element name="0">
-                    <properties>
-                      <type>tag</type>
-                      <access>TRUE</access>
-                      <required>FALSE</required>
-                      <tree>TRUE</tree>
-                      <actions>
-                        <create>
-                          <path>self::node()</path>
-                          <context>parent</context>
-                          <schema/>
-                          <type>element</type>
-                          <prefix>flvc</prefix>
-                          <value>flvc:otherLogo</value>
-                        </create>
-                        <read>
-                          <path>flvc:otherLogo</path>
-                          <context>parent</context>
-                        </read>
-                        <update>
-                          <path>self::node()</path>
-                          <context>self</context>
-                        </update>
-                        <delete>
-                          <path>self::node()</path>
-                          <context>self</context>
-                        </delete>
-                      </actions>
-                    </properties>
-                    <children/>
-                  </element>
-                </children>
-              </element>
-            </children>
-          </element>
-        </children>
-      </element>
       <element name="titleInfoTab">
         <properties>
           <type>tabs</type>
@@ -715,7 +506,13 @@
         <properties>
           <type>tabs</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Identifiers</title>
           <tree>TRUE</tree>
           <actions>
@@ -766,9 +563,15 @@
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <default_value>IID</default_value>
                   <description>The type of identifier.  Suggested values include, but are not limited to, those specified in Standard Identifier Source Codes.  Use "IID" for local item identifier.</description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>Type</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -904,6 +707,7 @@
                       <executes_submit_callback>FALSE</executes_submit_callback>
                       <multiple>FALSE</multiple>
                       <options>
+                        <index key=""/>
                         <personal>personal</personal>
                         <corporate>corporate</corporate>
                         <conference>conference</conference>
@@ -1349,9 +1153,15 @@
         <properties>
           <type>select</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
           <default_value>text</default_value>
           <description>The general type of content of the original item.</description>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <options>
+            <index key=""/>
             <cartographic>cartographic</cartographic>
             <index key="mixed material">mixed material</index>
             <index key="moving image">moving image</index>
@@ -1365,6 +1175,7 @@
             <index key="three dimensional object">three dimensional object</index>
           </options>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Type of Resource</title>
           <tree>TRUE</tree>
           <actions>
@@ -3538,7 +3349,12 @@
         <properties>
           <type>select</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
           <description>How the resource was or is issued.</description>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <options>
             <index key=""/>
             <continuing>continuing</continuing>
@@ -3549,6 +3365,7 @@
             <index key="single unit">single unit</index>
           </options>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Issuance</title>
           <tree>TRUE</tree>
           <actions>
@@ -3654,12 +3471,19 @@
                 <properties>
                   <type>select</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <default_value>iso639-2b</default_value>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <options>
+                    <index key=""/>
                     <index key="iso639-2b">iso639-2b</index>
                     <rfc3066>rfc3066</rfc3066>
                   </options>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>Authority</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -4128,10 +3952,12 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
+                  <default_value>Abstract</default_value>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
                   <options>
+                    <index key=""/>
                     <Summary>Summary</Summary>
                     <Abstract>Abstract</Abstract>
                     <index key="Scope and content">Scope and content</index>
@@ -5738,6 +5564,7 @@
                           <executes_submit_callback>FALSE</executes_submit_callback>
                           <multiple>FALSE</multiple>
                           <options>
+                            <index key=""/>
                             <personal>personal</personal>
                             <family>family</family>
                             <corporate>corporate</corporate>
@@ -6204,6 +6031,11 @@
                         <properties>
                           <type>select</type>
                           <access>TRUE</access>
+                          <collapsed>FALSE</collapsed>
+                          <collapsible>FALSE</collapsible>
+                          <disabled>FALSE</disabled>
+                          <executes_submit_callback>FALSE</executes_submit_callback>
+                          <multiple>FALSE</multiple>
                           <options>
                             <index key="">No type provided</index>
                             <alternative>alternative</alternative>
@@ -6212,6 +6044,7 @@
                             <uniform>uniform</uniform>
                           </options>
                           <required>FALSE</required>
+                          <resizable>FALSE</resizable>
                           <tree>TRUE</tree>
                           <actions>
                             <create>
@@ -7131,8 +6964,14 @@
                 <properties>
                   <type>select</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <description>The classification scheme used.</description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <options>
+                    <index key=""/>
                     <lcc>lcc</lcc>
                     <sudocs>sudocs</sudocs>
                     <nlm>nlm</nlm>
@@ -7141,6 +6980,7 @@
                     <candocs>candocs</candocs>
                   </options>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>Authority</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -7259,6 +7099,7 @@
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
                   <options>
+                    <index key=""/>
                     <constituent>constituent</constituent>
                     <host>host</host>
                     <index key="is referenced by">is referenced by</index>
@@ -7296,6 +7137,146 @@
                   </actions>
                 </properties>
                 <children/>
+              </element>
+              <element name="relNoteInfo">
+                <properties>
+                  <type>fieldset</type>
+                  <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
+                  <required>FALSE</required>
+                  <resizable>FALSE</resizable>
+                  <title>NOTE</title>
+                  <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>parent</context>
+                      <schema/>
+                      <type>element</type>
+                      <prefix>NULL</prefix>
+                      <value>note</value>
+                    </create>
+                    <read>
+                      <path>mods:note</path>
+                      <context>parent</context>
+                    </read>
+                    <update>NULL</update>
+                    <delete>NULL</delete>
+                  </actions>
+                </properties>
+                <children>
+                  <element name="relNoteType">
+                    <properties>
+                      <type>textfield</type>
+                      <access>TRUE</access>
+                      <collapsed>FALSE</collapsed>
+                      <collapsible>FALSE</collapsible>
+                      <description>The type of title.</description>
+                      <disabled>FALSE</disabled>
+                      <executes_submit_callback>FALSE</executes_submit_callback>
+                      <multiple>FALSE</multiple>
+                      <options>
+                        <index key=""/>
+                        <alternative>alternative</alternative>
+                        <abbreviated>abbreviated</abbreviated>
+                        <translated>translated</translated>
+                        <uniform>uniform</uniform>
+                      </options>
+                      <required>FALSE</required>
+                      <resizable>FALSE</resizable>
+                      <title>Type</title>
+                      <tree>TRUE</tree>
+                      <actions>
+                        <create>
+                          <path>self::node()</path>
+                          <context>parent</context>
+                          <schema/>
+                          <type>attribute</type>
+                          <prefix>NULL</prefix>
+                          <value>type</value>
+                        </create>
+                        <read>
+                          <path>@type</path>
+                          <context>parent</context>
+                        </read>
+                        <update>
+                          <path>self::node()</path>
+                          <context>self</context>
+                        </update>
+                        <delete>NULL</delete>
+                      </actions>
+                    </properties>
+                    <children/>
+                  </element>
+                  <element name="relNote">
+                    <properties>
+                      <type>textarea</type>
+                      <access>TRUE</access>
+                      <collapsed>FALSE</collapsed>
+                      <collapsible>FALSE</collapsible>
+                      <disabled>FALSE</disabled>
+                      <executes_submit_callback>FALSE</executes_submit_callback>
+                      <multiple>FALSE</multiple>
+                      <required>FALSE</required>
+                      <resizable>FALSE</resizable>
+                      <title>NOTE</title>
+                      <tree>TRUE</tree>
+                      <actions>
+                        <create>NULL</create>
+                        <read>
+                          <path>self::node()</path>
+                          <context>parent</context>
+                        </read>
+                        <update>
+                          <path>self::node()</path>
+                          <context>parent</context>
+                        </update>
+                        <delete>NULL</delete>
+                      </actions>
+                    </properties>
+                    <children/>
+                  </element>
+                  <element name="relNoteDisplayLabel">
+                    <properties>
+                      <type>textfield</type>
+                      <access>TRUE</access>
+                      <collapsed>FALSE</collapsed>
+                      <collapsible>FALSE</collapsible>
+                      <description>Label to be displayed before text of note.</description>
+                      <disabled>FALSE</disabled>
+                      <executes_submit_callback>FALSE</executes_submit_callback>
+                      <multiple>FALSE</multiple>
+                      <required>FALSE</required>
+                      <resizable>FALSE</resizable>
+                      <title>Display label</title>
+                      <tree>TRUE</tree>
+                      <actions>
+                        <create>
+                          <path>self::node()</path>
+                          <context>parent</context>
+                          <schema/>
+                          <type>attribute</type>
+                          <prefix>NULL</prefix>
+                          <value>displayLabel</value>
+                        </create>
+                        <read>
+                          <path>@displayLabel</path>
+                          <context>parent</context>
+                        </read>
+                        <update>
+                          <path>self::node()</path>
+                          <context>self</context>
+                        </update>
+                        <delete>NULL</delete>
+                      </actions>
+                    </properties>
+                    <children/>
+                  </element>
+                </children>
               </element>
               <element name="relTitleInfo">
                 <properties>
@@ -7936,6 +7917,7 @@
                       <executes_submit_callback>FALSE</executes_submit_callback>
                       <multiple>FALSE</multiple>
                       <options>
+                        <index key=""/>
                         <personal>personal</personal>
                         <corporate>corporate</corporate>
                         <conference>conference</conference>
@@ -9965,12 +9947,19 @@
                         <properties>
                           <type>select</type>
                           <access>TRUE</access>
+                          <collapsed>FALSE</collapsed>
+                          <collapsible>FALSE</collapsible>
                           <description>Whether the language term is code or text.</description>
+                          <disabled>FALSE</disabled>
+                          <executes_submit_callback>FALSE</executes_submit_callback>
+                          <multiple>FALSE</multiple>
                           <options>
+                            <index key=""/>
                             <code>code</code>
                             <text>text</text>
                           </options>
                           <required>FALSE</required>
+                          <resizable>FALSE</resizable>
                           <title>Language term type</title>
                           <tree>TRUE</tree>
                           <actions>
@@ -9999,12 +9988,19 @@
                         <properties>
                           <type>select</type>
                           <access>TRUE</access>
+                          <collapsed>FALSE</collapsed>
+                          <collapsible>FALSE</collapsible>
                           <description>The authority list from which the term or code was taken.</description>
+                          <disabled>FALSE</disabled>
+                          <executes_submit_callback>FALSE</executes_submit_callback>
+                          <multiple>FALSE</multiple>
                           <options>
+                            <index key=""/>
                             <rfc3066>rfc3066</rfc3066>
                             <index key="iso639-2b">iso639-2b</index>
                           </options>
                           <required>FALSE</required>
+                          <resizable>FALSE</resizable>
                           <title>Authority</title>
                           <tree>TRUE</tree>
                           <actions>
@@ -10118,12 +10114,19 @@
                         <properties>
                           <type>select</type>
                           <access>TRUE</access>
+                          <collapsed>FALSE</collapsed>
+                          <collapsible>FALSE</collapsible>
                           <description>Whether the script term is code or text.</description>
+                          <disabled>FALSE</disabled>
+                          <executes_submit_callback>FALSE</executes_submit_callback>
+                          <multiple>FALSE</multiple>
                           <options>
+                            <index key=""/>
                             <code>code</code>
                             <text>text</text>
                           </options>
                           <required>FALSE</required>
+                          <resizable>FALSE</resizable>
                           <title>Script term type</title>
                           <tree>TRUE</tree>
                           <actions>
@@ -10152,12 +10155,18 @@
                         <properties>
                           <type>select</type>
                           <access>TRUE</access>
+                          <collapsed>FALSE</collapsed>
+                          <collapsible>FALSE</collapsible>
                           <description>The authority used for the script code or term.</description>
+                          <disabled>FALSE</disabled>
+                          <executes_submit_callback>FALSE</executes_submit_callback>
+                          <multiple>FALSE</multiple>
                           <options>
-                            <iso15924>iso15924</iso15924>
                             <index key="">no authority specified</index>
+                            <iso15924>iso15924</iso15924>
                           </options>
                           <required>FALSE</required>
+                          <resizable>FALSE</resizable>
                           <title>Authority</title>
                           <tree>TRUE</tree>
                           <actions>
@@ -10194,8 +10203,14 @@
         <properties>
           <type>hidden</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
           <default_value>http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd</default_value>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <tree>TRUE</tree>
           <actions>
             <create>
