@@ -2,9 +2,9 @@
 <definition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3">
   <properties>
     <root_name>mods</root_name>
-    <schema_uri/>
+    <schema_uri>http://www.loc.gov/standards/mods/v3/mods-3-4.xsd</schema_uri>
     <namespaces default="http://www.loc.gov/mods/v3">
-      <namespace prefix="copyrightMD">http://www.cdlib.org/groups/rmg/docs/copyrightMD.xsd</namespace>
+      <namespace prefix="copyrightMD">http://www.cdlib.org/inside/diglib/copyrightMD</namespace>
       <namespace prefix="mods">http://www.loc.gov/mods/v3</namespace>
       <namespace prefix="xsi">http://www.w3.org/2001/XMLSchema-instance</namespace>
       <namespace prefix="xlink">http://www.w3.org/1999/xlink</namespace>
@@ -191,8 +191,14 @@
                     <properties>
                       <type>textfield</type>
                       <access>TRUE</access>
+                      <collapsed>FALSE</collapsed>
+                      <collapsible>FALSE</collapsible>
+                      <disabled>FALSE</disabled>
+                      <executes_submit_callback>FALSE</executes_submit_callback>
                       <maxlength>400</maxlength>
+                      <multiple>FALSE</multiple>
                       <required>TRUE</required>
+                      <resizable>FALSE</resizable>
                       <title>Title</title>
                       <tree>TRUE</tree>
                       <actions>
@@ -565,7 +571,6 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <default_value>IID</default_value>
                   <description>The type of identifier.  Suggested values include, but are not limited to, those specified in Standard Identifier Source Codes.  Use "IID" for local item identifier.</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
@@ -701,7 +706,6 @@
                       <access>TRUE</access>
                       <collapsed>FALSE</collapsed>
                       <collapsible>FALSE</collapsible>
-                      <default_value>personal</default_value>
                       <description>What type of name is recorded.</description>
                       <disabled>FALSE</disabled>
                       <executes_submit_callback>FALSE</executes_submit_callback>
@@ -836,8 +840,14 @@
                     <properties>
                       <type>textfield</type>
                       <access>TRUE</access>
+                      <collapsed>FALSE</collapsed>
+                      <collapsible>FALSE</collapsible>
                       <description>The family name (surname) segment of a personal name.</description>
+                      <disabled>FALSE</disabled>
+                      <executes_submit_callback>FALSE</executes_submit_callback>
+                      <multiple>FALSE</multiple>
                       <required>FALSE</required>
+                      <resizable>FALSE</resizable>
                       <title>Family name</title>
                       <tree>TRUE</tree>
                       <actions>
@@ -904,8 +914,14 @@
                     <properties>
                       <type>textfield</type>
                       <access>TRUE</access>
+                      <collapsed>FALSE</collapsed>
+                      <collapsible>FALSE</collapsible>
                       <description>Date(s) associated with a personal name.</description>
+                      <disabled>FALSE</disabled>
+                      <executes_submit_callback>FALSE</executes_submit_callback>
+                      <multiple>FALSE</multiple>
                       <required>FALSE</required>
+                      <resizable>FALSE</resizable>
                       <title>Dates</title>
                       <tree>TRUE</tree>
                       <actions>
@@ -935,8 +951,14 @@
                     <properties>
                       <type>textfield</type>
                       <access>TRUE</access>
+                      <collapsed>FALSE</collapsed>
+                      <collapsible>FALSE</collapsible>
                       <description>An organization associated this person at the time that the resource was created.</description>
+                      <disabled>FALSE</disabled>
+                      <executes_submit_callback>FALSE</executes_submit_callback>
+                      <multiple>FALSE</multiple>
                       <required>FALSE</required>
+                      <resizable>FALSE</resizable>
                       <title>Affiliation</title>
                       <tree>TRUE</tree>
                       <actions>
@@ -965,8 +987,14 @@
                     <properties>
                       <type>tags</type>
                       <access>TRUE</access>
-                      <description>Textual role term from MARCRelator terms vocabulary.</description>
+                      <collapsed>FALSE</collapsed>
+                      <collapsible>FALSE</collapsible>
+                      <description>Textual role term from MARCRelator terms vocabulary. http://www.loc.gov/marc/relators/relaterm.html</description>
+                      <disabled>FALSE</disabled>
+                      <executes_submit_callback>FALSE</executes_submit_callback>
+                      <multiple>FALSE</multiple>
                       <required>FALSE</required>
+                      <resizable>FALSE</resizable>
                       <title>Role (text)</title>
                       <tree>TRUE</tree>
                     </properties>
@@ -990,7 +1018,7 @@
                               <schema/>
                               <type>xml</type>
                               <prefix>NULL</prefix>
-                              <value>&lt;role&gt;&lt;roleTerm type="text" authority="marcrelator"&gt;%value%&lt;/roleTerm&gt;&lt;/role&gt;</value>
+                              <value>&lt;role&gt;&lt;roleTerm type="text"&gt;%value%&lt;/roleTerm&gt;&lt;/role&gt;</value>
                             </create>
                             <read>
                               <path>mods:role/mods:roleTerm[@type='text']</path>
@@ -1014,8 +1042,14 @@
                     <properties>
                       <type>tags</type>
                       <access>TRUE</access>
-                      <description>Coded role term from MARCRelator terms vocabulary.</description>
+                      <collapsed>FALSE</collapsed>
+                      <collapsible>FALSE</collapsible>
+                      <description>Coded role term from MARCRelator terms vocabulary. http://www.loc.gov/marc/relators/relaterm.html</description>
+                      <disabled>FALSE</disabled>
+                      <executes_submit_callback>FALSE</executes_submit_callback>
+                      <multiple>FALSE</multiple>
                       <required>FALSE</required>
+                      <resizable>FALSE</resizable>
                       <title>Role (code)</title>
                       <tree>TRUE</tree>
                     </properties>
@@ -1024,7 +1058,13 @@
                         <properties>
                           <type>tag</type>
                           <access>TRUE</access>
+                          <collapsed>FALSE</collapsed>
+                          <collapsible>FALSE</collapsible>
+                          <disabled>FALSE</disabled>
+                          <executes_submit_callback>FALSE</executes_submit_callback>
+                          <multiple>FALSE</multiple>
                           <required>FALSE</required>
+                          <resizable>FALSE</resizable>
                           <tree>TRUE</tree>
                           <actions>
                             <create>
@@ -1057,8 +1097,14 @@
                     <properties>
                       <type>textfield</type>
                       <access>TRUE</access>
+                      <collapsed>FALSE</collapsed>
+                      <collapsible>FALSE</collapsible>
                       <description>The controlled vocabulary from which the name was taken.</description>
+                      <disabled>FALSE</disabled>
+                      <executes_submit_callback>FALSE</executes_submit_callback>
+                      <multiple>FALSE</multiple>
                       <required>FALSE</required>
+                      <resizable>FALSE</resizable>
                       <title>Authority</title>
                       <tree>TRUE</tree>
                       <actions>
@@ -1087,8 +1133,14 @@
                     <properties>
                       <type>textfield</type>
                       <access>TRUE</access>
+                      <collapsed>FALSE</collapsed>
+                      <collapsible>FALSE</collapsible>
                       <description>Use to link the name to the same name in a different language or script.</description>
+                      <disabled>FALSE</disabled>
+                      <executes_submit_callback>FALSE</executes_submit_callback>
+                      <multiple>FALSE</multiple>
                       <required>FALSE</required>
+                      <resizable>FALSE</resizable>
                       <title>Alternate representation group</title>
                       <tree>TRUE</tree>
                       <actions>
@@ -1117,8 +1169,14 @@
                     <properties>
                       <type>textfield</type>
                       <access>TRUE</access>
+                      <collapsed>FALSE</collapsed>
+                      <collapsible>FALSE</collapsible>
                       <description>Use to link a name to a uniform title.</description>
+                      <disabled>FALSE</disabled>
+                      <executes_submit_callback>FALSE</executes_submit_callback>
+                      <multiple>FALSE</multiple>
                       <required>FALSE</required>
+                      <resizable>FALSE</resizable>
                       <title>Name/title group</title>
                       <tree>TRUE</tree>
                       <actions>
@@ -1155,7 +1213,6 @@
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <default_value>text</default_value>
           <description>The general type of content of the original item.</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
@@ -1261,8 +1318,14 @@
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <description>The controlled vocabulary from which the genre term was taken. See http://www.loc.gov/standards/sourcelist/genre-form.html for an authority list of sources.</description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>Authority</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -3473,14 +3536,13 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <default_value>iso639-2b</default_value>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
                   <options>
                     <index key=""/>
-                    <index key="iso639-2b">iso639-2b</index>
-                    <rfc3066>rfc3066</rfc3066>
+                    <index key="iso639-2b">ISO639-2B</index>
+                    <rfc3066>RFC3066</rfc3066>
                   </options>
                   <required>FALSE</required>
                   <resizable>FALSE</resizable>
@@ -3952,7 +4014,6 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <default_value>Abstract</default_value>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -4028,8 +4089,14 @@
         <properties>
           <type>textarea</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
           <description>A description of the contents of a resource.</description>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Table of contents</title>
           <tree>TRUE</tree>
           <actions>
@@ -4328,7 +4395,11 @@
               <collapsed>TRUE</collapsed>
               <collapsible>TRUE</collapsible>
               <description>The focus of the content of the resource.</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>Topical subject</title>
               <tree>TRUE</tree>
               <actions>
@@ -5558,7 +5629,6 @@
                           <access>TRUE</access>
                           <collapsed>FALSE</collapsed>
                           <collapsible>FALSE</collapsible>
-                          <default_value>personal</default_value>
                           <description>What type of name is recorded.</description>
                           <disabled>FALSE</disabled>
                           <executes_submit_callback>FALSE</executes_submit_callback>
@@ -6913,7 +6983,13 @@
         <properties>
           <type>tabs</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Classification</title>
           <tree>TRUE</tree>
           <actions>
@@ -6972,11 +7048,11 @@
                   <multiple>FALSE</multiple>
                   <options>
                     <index key=""/>
-                    <lcc>lcc</lcc>
-                    <sudocs>sudocs</sudocs>
-                    <nlm>nlm</nlm>
-                    <dcc>dcc</dcc>
-                    <udc>udc</udc>
+                    <lcc>LCC</lcc>
+                    <sudocs>SUDOCS</sudocs>
+                    <nlm>NLM</nlm>
+                    <dcc>DCC</dcc>
+                    <udc>UDC</udc>
                     <candocs>candocs</candocs>
                   </options>
                   <required>FALSE</required>
@@ -7009,8 +7085,14 @@
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <description>The classification or call number of a resource.</description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>Classification</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -7137,146 +7219,6 @@
                   </actions>
                 </properties>
                 <children/>
-              </element>
-              <element name="relNoteInfo">
-                <properties>
-                  <type>fieldset</type>
-                  <access>TRUE</access>
-                  <collapsed>FALSE</collapsed>
-                  <collapsible>FALSE</collapsible>
-                  <disabled>FALSE</disabled>
-                  <executes_submit_callback>FALSE</executes_submit_callback>
-                  <multiple>FALSE</multiple>
-                  <required>FALSE</required>
-                  <resizable>FALSE</resizable>
-                  <title>NOTE</title>
-                  <tree>TRUE</tree>
-                  <actions>
-                    <create>
-                      <path>self::node()</path>
-                      <context>parent</context>
-                      <schema/>
-                      <type>element</type>
-                      <prefix>NULL</prefix>
-                      <value>note</value>
-                    </create>
-                    <read>
-                      <path>mods:note</path>
-                      <context>parent</context>
-                    </read>
-                    <update>NULL</update>
-                    <delete>NULL</delete>
-                  </actions>
-                </properties>
-                <children>
-                  <element name="relNoteType">
-                    <properties>
-                      <type>textfield</type>
-                      <access>TRUE</access>
-                      <collapsed>FALSE</collapsed>
-                      <collapsible>FALSE</collapsible>
-                      <description>The type of title.</description>
-                      <disabled>FALSE</disabled>
-                      <executes_submit_callback>FALSE</executes_submit_callback>
-                      <multiple>FALSE</multiple>
-                      <options>
-                        <index key=""/>
-                        <alternative>alternative</alternative>
-                        <abbreviated>abbreviated</abbreviated>
-                        <translated>translated</translated>
-                        <uniform>uniform</uniform>
-                      </options>
-                      <required>FALSE</required>
-                      <resizable>FALSE</resizable>
-                      <title>Type</title>
-                      <tree>TRUE</tree>
-                      <actions>
-                        <create>
-                          <path>self::node()</path>
-                          <context>parent</context>
-                          <schema/>
-                          <type>attribute</type>
-                          <prefix>NULL</prefix>
-                          <value>type</value>
-                        </create>
-                        <read>
-                          <path>@type</path>
-                          <context>parent</context>
-                        </read>
-                        <update>
-                          <path>self::node()</path>
-                          <context>self</context>
-                        </update>
-                        <delete>NULL</delete>
-                      </actions>
-                    </properties>
-                    <children/>
-                  </element>
-                  <element name="relNote">
-                    <properties>
-                      <type>textarea</type>
-                      <access>TRUE</access>
-                      <collapsed>FALSE</collapsed>
-                      <collapsible>FALSE</collapsible>
-                      <disabled>FALSE</disabled>
-                      <executes_submit_callback>FALSE</executes_submit_callback>
-                      <multiple>FALSE</multiple>
-                      <required>FALSE</required>
-                      <resizable>FALSE</resizable>
-                      <title>NOTE</title>
-                      <tree>TRUE</tree>
-                      <actions>
-                        <create>NULL</create>
-                        <read>
-                          <path>self::node()</path>
-                          <context>parent</context>
-                        </read>
-                        <update>
-                          <path>self::node()</path>
-                          <context>parent</context>
-                        </update>
-                        <delete>NULL</delete>
-                      </actions>
-                    </properties>
-                    <children/>
-                  </element>
-                  <element name="relNoteDisplayLabel">
-                    <properties>
-                      <type>textfield</type>
-                      <access>TRUE</access>
-                      <collapsed>FALSE</collapsed>
-                      <collapsible>FALSE</collapsible>
-                      <description>Label to be displayed before text of note.</description>
-                      <disabled>FALSE</disabled>
-                      <executes_submit_callback>FALSE</executes_submit_callback>
-                      <multiple>FALSE</multiple>
-                      <required>FALSE</required>
-                      <resizable>FALSE</resizable>
-                      <title>Display label</title>
-                      <tree>TRUE</tree>
-                      <actions>
-                        <create>
-                          <path>self::node()</path>
-                          <context>parent</context>
-                          <schema/>
-                          <type>attribute</type>
-                          <prefix>NULL</prefix>
-                          <value>displayLabel</value>
-                        </create>
-                        <read>
-                          <path>@displayLabel</path>
-                          <context>parent</context>
-                        </read>
-                        <update>
-                          <path>self::node()</path>
-                          <context>self</context>
-                        </update>
-                        <delete>NULL</delete>
-                      </actions>
-                    </properties>
-                    <children/>
-                  </element>
-                </children>
               </element>
               <element name="relTitleInfo">
                 <properties>
@@ -7911,7 +7853,6 @@
                       <access>TRUE</access>
                       <collapsed>FALSE</collapsed>
                       <collapsible>FALSE</collapsible>
-                      <default_value>personal</default_value>
                       <description>What type of name is recorded.</description>
                       <disabled>FALSE</disabled>
                       <executes_submit_callback>FALSE</executes_submit_callback>
@@ -7927,25 +7868,6 @@
                       <resizable>FALSE</resizable>
                       <title>Type</title>
                       <tree>TRUE</tree>
-                      <actions>
-                        <create>
-                          <path>self::node()</path>
-                          <context>parent</context>
-                          <schema/>
-                          <type>attribute</type>
-                          <prefix>NULL</prefix>
-                          <value>type</value>
-                        </create>
-                        <read>
-                          <path>@type</path>
-                          <context>parent</context>
-                        </read>
-                        <update>
-                          <path>self::node()</path>
-                          <context>self</context>
-                        </update>
-                        <delete>NULL</delete>
-                      </actions>
                     </properties>
                     <children/>
                   </element>
@@ -8749,7 +8671,12 @@
                     <properties>
                       <type>select</type>
                       <access>TRUE</access>
+                      <collapsed>FALSE</collapsed>
+                      <collapsible>FALSE</collapsible>
                       <description>How the resource was or is issued.</description>
+                      <disabled>FALSE</disabled>
+                      <executes_submit_callback>FALSE</executes_submit_callback>
+                      <multiple>FALSE</multiple>
                       <options>
                         <index key=""/>
                         <continuing>continuing</continuing>
@@ -8760,6 +8687,7 @@
                         <index key="single unit">single unit</index>
                       </options>
                       <required>FALSE</required>
+                      <resizable>FALSE</resizable>
                       <title>Issuance</title>
                       <tree>TRUE</tree>
                       <actions>
@@ -9143,29 +9071,177 @@
                   </element>
                 </children>
               </element>
+              <element name="relNoteInfo">
+                <properties>
+                  <type>fieldset</type>
+                  <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
+                  <required>FALSE</required>
+                  <resizable>FALSE</resizable>
+                  <title>NOTE</title>
+                  <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>parent</context>
+                      <schema/>
+                      <type>element</type>
+                      <prefix>NULL</prefix>
+                      <value>note</value>
+                    </create>
+                    <read>
+                      <path>mods:note</path>
+                      <context>parent</context>
+                    </read>
+                    <update>NULL</update>
+                    <delete>NULL</delete>
+                  </actions>
+                </properties>
+                <children>
+                  <element name="relNoteType">
+                    <properties>
+                      <type>textfield</type>
+                      <access>TRUE</access>
+                      <collapsed>FALSE</collapsed>
+                      <collapsible>FALSE</collapsible>
+                      <description>The type of title.</description>
+                      <disabled>FALSE</disabled>
+                      <executes_submit_callback>FALSE</executes_submit_callback>
+                      <multiple>FALSE</multiple>
+                      <required>FALSE</required>
+                      <resizable>FALSE</resizable>
+                      <title>Type</title>
+                      <tree>TRUE</tree>
+                      <actions>
+                        <create>
+                          <path>self::node()</path>
+                          <context>parent</context>
+                          <schema/>
+                          <type>attribute</type>
+                          <prefix>NULL</prefix>
+                          <value>type</value>
+                        </create>
+                        <read>
+                          <path>@type</path>
+                          <context>parent</context>
+                        </read>
+                        <update>
+                          <path>self::node()</path>
+                          <context>self</context>
+                        </update>
+                        <delete>NULL</delete>
+                      </actions>
+                    </properties>
+                    <children/>
+                  </element>
+                  <element name="relNoteDisplayLabel">
+                    <properties>
+                      <type>textfield</type>
+                      <access>TRUE</access>
+                      <collapsed>FALSE</collapsed>
+                      <collapsible>FALSE</collapsible>
+                      <description>Label to be displayed before text of note.</description>
+                      <disabled>FALSE</disabled>
+                      <executes_submit_callback>FALSE</executes_submit_callback>
+                      <multiple>FALSE</multiple>
+                      <required>FALSE</required>
+                      <resizable>FALSE</resizable>
+                      <title>Display label</title>
+                      <tree>TRUE</tree>
+                      <actions>
+                        <create>
+                          <path>self::node()</path>
+                          <context>parent</context>
+                          <schema/>
+                          <type>attribute</type>
+                          <prefix>NULL</prefix>
+                          <value>displayLabel</value>
+                        </create>
+                        <read>
+                          <path>@displayLabel</path>
+                          <context>parent</context>
+                        </read>
+                        <update>
+                          <path>self::node()</path>
+                          <context>self</context>
+                        </update>
+                        <delete>NULL</delete>
+                      </actions>
+                    </properties>
+                    <children/>
+                  </element>
+                  <element name="relNote">
+                    <properties>
+                      <type>textarea</type>
+                      <access>TRUE</access>
+                      <collapsed>FALSE</collapsed>
+                      <collapsible>FALSE</collapsible>
+                      <disabled>FALSE</disabled>
+                      <executes_submit_callback>FALSE</executes_submit_callback>
+                      <multiple>FALSE</multiple>
+                      <required>FALSE</required>
+                      <resizable>FALSE</resizable>
+                      <title>Note</title>
+                      <tree>TRUE</tree>
+                      <actions>
+                        <create>NULL</create>
+                        <read>
+                          <path>self::node()</path>
+                          <context>parent</context>
+                        </read>
+                        <update>
+                          <path>self::node()</path>
+                          <context>parent</context>
+                        </update>
+                        <delete>NULL</delete>
+                      </actions>
+                    </properties>
+                    <children/>
+                  </element>
+                </children>
+              </element>
             </children>
           </element>
         </children>
       </element>
       <element name="accessCondition">
         <properties>
-          <type>tags</type>
+          <type>fieldset</type>
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <description>General information about the use and reproduction of the resource, including links to copyright information pages.  For specific restrictions on access (e.g. "Restricted: cannot be viewed until 2010") use the Restriction on Access note.</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
           <required>FALSE</required>
           <resizable>FALSE</resizable>
-          <title>Use and reproduction</title>
+          <title>accessCondition</title>
           <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>/mods:mods</path>
+              <context>document</context>
+              <schema/>
+              <type>element</type>
+              <prefix>NULL</prefix>
+              <value>accessCondition</value>
+            </create>
+            <read>
+              <path>/mods:mods/mods:accessCondition</path>
+              <context>document</context>
+            </read>
+            <update>NULL</update>
+            <delete>NULL</delete>
+          </actions>
         </properties>
         <children>
-          <element name="0">
+          <element name="copyrightMD">
             <properties>
-              <type>tag</type>
+              <type>fieldset</type>
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
@@ -9174,31 +9250,112 @@
               <multiple>FALSE</multiple>
               <required>FALSE</required>
               <resizable>FALSE</resizable>
+              <title>copyrightMD</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
-                  <path>/mods:mods</path>
-                  <context>document</context>
+                  <path>self::node()</path>
+                  <context>parent</context>
                   <schema/>
-                  <type>xml</type>
-                  <prefix>NULL</prefix>
-                  <value>&lt;accessCondition type="useAndReproduction"&gt;%value%&lt;/accessCondition&gt;</value>
+                  <type>element</type>
+                  <prefix>copyrightMD</prefix>
+                  <value>copyrightMD:copyright</value>
                 </create>
                 <read>
-                  <path>/mods:mods/mods:accessCondition[(node()) and (not(@type) or @type='useAndReproduction')]</path>
-                  <context>document</context>
+                  <path>copyrightMD:copyright</path>
+                  <context>parent</context>
                 </read>
-                <update>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </update>
-                <delete>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </delete>
+                <update>NULL</update>
+                <delete>NULL</delete>
               </actions>
             </properties>
-            <children/>
+            <children>
+              <element name="publicationstatus">
+                <properties>
+                  <type>select</type>
+                  <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
+                  <options>
+                    <index key=""/>
+                    <unknown>unknown</unknown>
+                    <published>published</published>
+                    <unpublished>unpublished</unpublished>
+                  </options>
+                  <required>FALSE</required>
+                  <resizable>FALSE</resizable>
+                  <title>Publication Status</title>
+                  <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>parent</context>
+                      <schema/>
+                      <type>attribute</type>
+                      <prefix>NULL</prefix>
+                      <value>publication.status</value>
+                    </create>
+                    <read>
+                      <path>@publication.status</path>
+                      <context>parent</context>
+                    </read>
+                    <update>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </update>
+                    <delete>NULL</delete>
+                  </actions>
+                </properties>
+                <children/>
+              </element>
+              <element name="copyrightstatus">
+                <properties>
+                  <type>select</type>
+                  <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
+                  <options>
+                    <index key=""/>
+                    <unknown>unknown</unknown>
+                    <copyrighted>Copyrighted: Under copyright</copyrighted>
+                    <pd>Public domain: No further information</pd>
+                    <pd_usfed>Public domain: US Federal Document</pd_usfed>
+                    <pd_holder>Public domain: Item dedicated to the public domain by the rights holder</pd_holder>
+                    <pd_expired>Public domain: Item in the public domain because of expiration of copyright based on US Law</pd_expired>
+                  </options>
+                  <required>FALSE</required>
+                  <resizable>FALSE</resizable>
+                  <title>Copyright Status</title>
+                  <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>parent</context>
+                      <schema/>
+                      <type>attribute</type>
+                      <prefix>NULL</prefix>
+                      <value>copyright.status</value>
+                    </create>
+                    <read>
+                      <path>@copyright.status</path>
+                      <context>parent</context>
+                    </read>
+                    <update>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </update>
+                    <delete>NULL</delete>
+                  </actions>
+                </properties>
+                <children/>
+              </element>
+            </children>
           </element>
         </children>
       </element>
@@ -9917,8 +10074,14 @@
                         <properties>
                           <type>textfield</type>
                           <access>TRUE</access>
+                          <collapsed>FALSE</collapsed>
+                          <collapsible>FALSE</collapsible>
                           <description>The language used to catalog the resource.</description>
+                          <disabled>FALSE</disabled>
+                          <executes_submit_callback>FALSE</executes_submit_callback>
+                          <multiple>FALSE</multiple>
                           <required>FALSE</required>
+                          <resizable>FALSE</resizable>
                           <title>Language of cataloging</title>
                           <tree>TRUE</tree>
                           <actions>
@@ -9996,8 +10159,8 @@
                           <multiple>FALSE</multiple>
                           <options>
                             <index key=""/>
-                            <rfc3066>rfc3066</rfc3066>
-                            <index key="iso639-2b">iso639-2b</index>
+                            <index key="iso639-2b">ISO639-2B</index>
+                            <rfc3066>RFC3066</rfc3066>
                           </options>
                           <required>FALSE</required>
                           <resizable>FALSE</resizable>
@@ -10163,7 +10326,7 @@
                           <multiple>FALSE</multiple>
                           <options>
                             <index key="">no authority specified</index>
-                            <iso15924>iso15924</iso15924>
+                            <iso15924>ISO15924</iso15924>
                           </options>
                           <required>FALSE</required>
                           <resizable>FALSE</resizable>
