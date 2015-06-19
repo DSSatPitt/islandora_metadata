@@ -1974,281 +1974,341 @@ Ensure at least one name is associated with the role "depositor".</description>
                       <tree>TRUE</tree>
                     </properties>
                     <children>
-                      <element name="otherDateType">
+                      <element name="originTabDO">
                         <properties>
-                          <type>select</type>
+                          <type>tabs</type>
                           <access>TRUE</access>
                           <collapsed>FALSE</collapsed>
                           <collapsible>FALSE</collapsible>
                           <disabled>FALSE</disabled>
                           <executes_submit_callback>FALSE</executes_submit_callback>
                           <multiple>FALSE</multiple>
-                          <options>
-                            <index key=""/>
-                            <display>display</display>
-                            <sort>sort</sort>
-                          </options>
                           <required>FALSE</required>
                           <resizable>FALSE</resizable>
-                          <title>Type</title>
                           <tree>TRUE</tree>
                           <actions>
-                            <create>
-                              <path>mods:dateOther</path>
-                              <context>parent</context>
-                              <schema/>
-                              <type>attribute</type>
-                              <prefix>NULL</prefix>
-                              <value>type</value>
-                            </create>
+                            <create>NULL</create>
                             <read>
-                              <path>mods:dateOther/@type</path>
-                              <context>parent</context>
+                              <path>/mods:mods</path>
+                              <context>document</context>
                             </read>
-                            <update>
-                              <path>self::node()</path>
-                              <context>self</context>
-                            </update>
+                            <update>NULL</update>
                             <delete>NULL</delete>
                           </actions>
                         </properties>
-                        <children/>
-                      </element>
-                      <element name="otherQualifier">
-                        <properties>
-                          <type>select</type>
-                          <access>TRUE</access>
-                          <collapsed>FALSE</collapsed>
-                          <collapsible>FALSE</collapsible>
-                          <description>Use with a single unspecified date if it is approximate, inferred, or questionable.</description>
-                          <disabled>FALSE</disabled>
-                          <executes_submit_callback>FALSE</executes_submit_callback>
-                          <multiple>FALSE</multiple>
-                          <options>
-                            <index key="">none</index>
-                            <approximate>approximate</approximate>
-                            <inferred>inferred</inferred>
-                            <questionable>questionable</questionable>
-                          </options>
-                          <required>FALSE</required>
-                          <resizable>FALSE</resizable>
-                          <title>Qualifier</title>
-                          <tree>TRUE</tree>
-                          <actions>
-                            <create>
-                              <path>mods:dateOther</path>
-                              <context>parent</context>
-                              <schema/>
-                              <type>attribute</type>
-                              <prefix>NULL</prefix>
-                              <value>qualifier</value>
-                            </create>
-                            <read>
-                              <path>mods:dateOther[not(@point)]/@qualifier</path>
-                              <context>parent</context>
-                            </read>
-                            <update>
-                              <path>self::node()</path>
-                              <context>self</context>
-                            </update>
-                            <delete>NULL</delete>
-                          </actions>
-                        </properties>
-                        <children/>
-                      </element>
-                      <element name="otherDate">
-                        <properties>
-                          <type>textfield</type>
-                          <access>TRUE</access>
-                          <collapsed>FALSE</collapsed>
-                          <collapsible>FALSE</collapsible>
-                          <description>Use for a single unspecified date. </description>
-                          <disabled>FALSE</disabled>
-                          <executes_submit_callback>FALSE</executes_submit_callback>
-                          <multiple>FALSE</multiple>
-                          <required>FALSE</required>
-                          <resizable>FALSE</resizable>
-                          <title>Other Date</title>
-                          <tree>TRUE</tree>
-                          <actions>
-                            <create>
-                              <path>self::node()</path>
-                              <context>parent</context>
-                              <schema/>
-                              <type>xml</type>
-                              <prefix>NULL</prefix>
-                              <value>&lt;dateOther encoding="iso8601"&gt;%value%&lt;/dateOther&gt;</value>
-                            </create>
-                            <read>
-                              <path>mods:dateOther[not(@point)]</path>
-                              <context>parent</context>
-                            </read>
-                            <update>
-                              <path>self::node()</path>
-                              <context>self</context>
-                            </update>
-                            <delete>NULL</delete>
-                          </actions>
-                        </properties>
-                        <children/>
-                      </element>
-                      <element name="otherStartDate">
-                        <properties>
-                          <type>textfield</type>
-                          <access>TRUE</access>
-                          <collapsed>FALSE</collapsed>
-                          <collapsible>FALSE</collapsible>
-                          <description>Use for start of unspecified date range.</description>
-                          <disabled>FALSE</disabled>
-                          <executes_submit_callback>FALSE</executes_submit_callback>
-                          <multiple>FALSE</multiple>
-                          <required>FALSE</required>
-                          <resizable>FALSE</resizable>
-                          <title>Start Date</title>
-                          <tree>TRUE</tree>
-                          <actions>
-                            <create>
-                              <path>self::node()</path>
-                              <context>parent</context>
-                              <schema/>
-                              <type>xml</type>
-                              <prefix>NULL</prefix>
-                              <value>&lt;dateOther encoding="iso8601"
+                        <children>
+                          <element name="originPanelDO">
+                            <properties>
+                              <type>tabpanel</type>
+                              <access>TRUE</access>
+                              <collapsed>FALSE</collapsed>
+                              <collapsible>FALSE</collapsible>
+                              <disabled>FALSE</disabled>
+                              <executes_submit_callback>FALSE</executes_submit_callback>
+                              <multiple>FALSE</multiple>
+                              <required>FALSE</required>
+                              <resizable>FALSE</resizable>
+                              <tree>TRUE</tree>
+                              <actions>
+                                <create>
+                                  <path>self::node()</path>
+                                  <context>parent</context>
+                                  <schema/>
+                                  <type>element</type>
+                                  <prefix>NULL</prefix>
+                                  <value>dateOther</value>
+                                </create>
+                                <read>
+                                  <path>mods:originInfo</path>
+                                  <context>parent</context>
+                                </read>
+                                <update>NULL</update>
+                                <delete>
+                                  <path>self::node()</path>
+                                  <context>self</context>
+                                </delete>
+                              </actions>
+                            </properties>
+                            <children>
+                              <element name="otherDateType">
+                                <properties>
+                                  <type>select</type>
+                                  <access>TRUE</access>
+                                  <collapsed>FALSE</collapsed>
+                                  <collapsible>FALSE</collapsible>
+                                  <disabled>FALSE</disabled>
+                                  <executes_submit_callback>FALSE</executes_submit_callback>
+                                  <multiple>FALSE</multiple>
+                                  <options>
+                                    <index key=""/>
+                                    <display>display</display>
+                                    <sort>sort</sort>
+                                  </options>
+                                  <required>FALSE</required>
+                                  <resizable>FALSE</resizable>
+                                  <title>Type</title>
+                                  <tree>TRUE</tree>
+                                  <actions>
+                                    <create>
+                                      <path>mods:dateOther</path>
+                                      <context>parent</context>
+                                      <schema/>
+                                      <type>attribute</type>
+                                      <prefix>NULL</prefix>
+                                      <value>type</value>
+                                    </create>
+                                    <read>
+                                      <path>mods:dateOther/@type</path>
+                                      <context>parent</context>
+                                    </read>
+                                    <update>
+                                      <path>self::node()</path>
+                                      <context>self</context>
+                                    </update>
+                                    <delete>NULL</delete>
+                                  </actions>
+                                </properties>
+                                <children/>
+                              </element>
+                              <element name="otherDate">
+                                <properties>
+                                  <type>textfield</type>
+                                  <access>TRUE</access>
+                                  <collapsed>FALSE</collapsed>
+                                  <collapsible>FALSE</collapsible>
+                                  <description>Use for a single unspecified date. </description>
+                                  <disabled>FALSE</disabled>
+                                  <executes_submit_callback>FALSE</executes_submit_callback>
+                                  <multiple>FALSE</multiple>
+                                  <required>FALSE</required>
+                                  <resizable>FALSE</resizable>
+                                  <title>Other Date</title>
+                                  <tree>TRUE</tree>
+                                  <actions>
+                                    <create>
+                                      <path>self::node()</path>
+                                      <context>parent</context>
+                                      <schema/>
+                                      <type>xml</type>
+                                      <prefix>NULL</prefix>
+                                      <value>&lt;dateOther encoding="iso8601"&gt;%value%&lt;/dateOther&gt;</value>
+                                    </create>
+                                    <read>
+                                      <path>mods:dateOther[not(@point)]</path>
+                                      <context>parent</context>
+                                    </read>
+                                    <update>
+                                      <path>self::node()</path>
+                                      <context>self</context>
+                                    </update>
+                                    <delete>NULL</delete>
+                                  </actions>
+                                </properties>
+                                <children/>
+                              </element>
+                              <element name="otherQualifier">
+                                <properties>
+                                  <type>select</type>
+                                  <access>TRUE</access>
+                                  <collapsed>FALSE</collapsed>
+                                  <collapsible>FALSE</collapsible>
+                                  <description>Use with a single unspecified date if it is approximate, inferred, or questionable.</description>
+                                  <disabled>FALSE</disabled>
+                                  <executes_submit_callback>FALSE</executes_submit_callback>
+                                  <multiple>FALSE</multiple>
+                                  <options>
+                                    <index key="">none</index>
+                                    <approximate>approximate</approximate>
+                                    <inferred>inferred</inferred>
+                                    <questionable>questionable</questionable>
+                                  </options>
+                                  <required>FALSE</required>
+                                  <resizable>FALSE</resizable>
+                                  <title>Qualifier</title>
+                                  <tree>TRUE</tree>
+                                  <actions>
+                                    <create>
+                                      <path>mods:dateOther</path>
+                                      <context>parent</context>
+                                      <schema/>
+                                      <type>attribute</type>
+                                      <prefix>NULL</prefix>
+                                      <value>qualifier</value>
+                                    </create>
+                                    <read>
+                                      <path>mods:dateOther[not(@point)]/@qualifier</path>
+                                      <context>parent</context>
+                                    </read>
+                                    <update>
+                                      <path>self::node()</path>
+                                      <context>self</context>
+                                    </update>
+                                    <delete>NULL</delete>
+                                  </actions>
+                                </properties>
+                                <children/>
+                              </element>
+                              <element name="otherStartDate">
+                                <properties>
+                                  <type>textfield</type>
+                                  <access>TRUE</access>
+                                  <collapsed>FALSE</collapsed>
+                                  <collapsible>FALSE</collapsible>
+                                  <description>Use for start of unspecified date range.</description>
+                                  <disabled>FALSE</disabled>
+                                  <executes_submit_callback>FALSE</executes_submit_callback>
+                                  <multiple>FALSE</multiple>
+                                  <required>FALSE</required>
+                                  <resizable>FALSE</resizable>
+                                  <title>Start Date</title>
+                                  <tree>TRUE</tree>
+                                  <actions>
+                                    <create>
+                                      <path>self::node()</path>
+                                      <context>parent</context>
+                                      <schema/>
+                                      <type>xml</type>
+                                      <prefix>NULL</prefix>
+                                      <value>&lt;dateOther encoding="iso8601"
                                                   point="start"&gt;%value%&lt;/dateOther&gt;</value>
-                            </create>
-                            <read>
-                              <path>mods:dateOther[@point='start']</path>
-                              <context>parent</context>
-                            </read>
-                            <update>
-                              <path>self::node()</path>
-                              <context>self</context>
-                            </update>
-                            <delete>NULL</delete>
-                          </actions>
-                        </properties>
-                        <children/>
-                      </element>
-                      <element name="otherStartQualifier">
-                        <properties>
-                          <type>select</type>
-                          <access>TRUE</access>
-                          <collapsed>FALSE</collapsed>
-                          <collapsible>FALSE</collapsible>
-                          <description>Use with start of unspecified date range when it is approximate, inferred, or questionable.</description>
-                          <disabled>FALSE</disabled>
-                          <executes_submit_callback>FALSE</executes_submit_callback>
-                          <multiple>FALSE</multiple>
-                          <options>
-                            <index key="">none</index>
-                            <approximate>approximate</approximate>
-                            <inferred>inferred</inferred>
-                            <questionable>questionable</questionable>
-                          </options>
-                          <required>FALSE</required>
-                          <resizable>FALSE</resizable>
-                          <title>Qualifier</title>
-                          <tree>TRUE</tree>
-                          <actions>
-                            <create>
-                              <path>mods:dateOther[@point='start']</path>
-                              <context>parent</context>
-                              <schema/>
-                              <type>attribute</type>
-                              <prefix>NULL</prefix>
-                              <value>qualifier</value>
-                            </create>
-                            <read>
-                              <path>mods:dateOther[@point='start']/@qualifier</path>
-                              <context>parent</context>
-                            </read>
-                            <update>
-                              <path>mods:dateOther[@point='start']/@qualifier</path>
-                              <context>parent</context>
-                            </update>
-                            <delete>NULL</delete>
-                          </actions>
-                        </properties>
-                        <children/>
-                      </element>
-                      <element name="otherEndDate">
-                        <properties>
-                          <type>textfield</type>
-                          <access>TRUE</access>
-                          <collapsed>FALSE</collapsed>
-                          <collapsible>FALSE</collapsible>
-                          <description>Use for end of unspecified date range.</description>
-                          <disabled>FALSE</disabled>
-                          <executes_submit_callback>FALSE</executes_submit_callback>
-                          <multiple>FALSE</multiple>
-                          <required>FALSE</required>
-                          <resizable>FALSE</resizable>
-                          <title>End Date</title>
-                          <tree>TRUE</tree>
-                          <actions>
-                            <create>
-                              <path>self::node()</path>
-                              <context>parent</context>
-                              <schema/>
-                              <type>xml</type>
-                              <prefix>NULL</prefix>
-                              <value>&lt;dateOther encoding="iso8601"
+                                    </create>
+                                    <read>
+                                      <path>mods:dateOther[@point='start']</path>
+                                      <context>parent</context>
+                                    </read>
+                                    <update>
+                                      <path>self::node()</path>
+                                      <context>self</context>
+                                    </update>
+                                    <delete>NULL</delete>
+                                  </actions>
+                                </properties>
+                                <children/>
+                              </element>
+                              <element name="otherStartQualifier">
+                                <properties>
+                                  <type>select</type>
+                                  <access>TRUE</access>
+                                  <collapsed>FALSE</collapsed>
+                                  <collapsible>FALSE</collapsible>
+                                  <description>Use with start of unspecified date range when it is approximate, inferred, or questionable.</description>
+                                  <disabled>FALSE</disabled>
+                                  <executes_submit_callback>FALSE</executes_submit_callback>
+                                  <multiple>FALSE</multiple>
+                                  <options>
+                                    <index key="">none</index>
+                                    <approximate>approximate</approximate>
+                                    <inferred>inferred</inferred>
+                                    <questionable>questionable</questionable>
+                                  </options>
+                                  <required>FALSE</required>
+                                  <resizable>FALSE</resizable>
+                                  <title>Qualifier</title>
+                                  <tree>TRUE</tree>
+                                  <actions>
+                                    <create>
+                                      <path>mods:dateOther[@point='start']</path>
+                                      <context>parent</context>
+                                      <schema/>
+                                      <type>attribute</type>
+                                      <prefix>NULL</prefix>
+                                      <value>qualifier</value>
+                                    </create>
+                                    <read>
+                                      <path>mods:dateOther[@point='start']/@qualifier</path>
+                                      <context>parent</context>
+                                    </read>
+                                    <update>
+                                      <path>mods:dateOther[@point='start']/@qualifier</path>
+                                      <context>parent</context>
+                                    </update>
+                                    <delete>NULL</delete>
+                                  </actions>
+                                </properties>
+                                <children/>
+                              </element>
+                              <element name="otherEndDate">
+                                <properties>
+                                  <type>textfield</type>
+                                  <access>TRUE</access>
+                                  <collapsed>FALSE</collapsed>
+                                  <collapsible>FALSE</collapsible>
+                                  <description>Use for end of unspecified date range.</description>
+                                  <disabled>FALSE</disabled>
+                                  <executes_submit_callback>FALSE</executes_submit_callback>
+                                  <multiple>FALSE</multiple>
+                                  <required>FALSE</required>
+                                  <resizable>FALSE</resizable>
+                                  <title>End Date</title>
+                                  <tree>TRUE</tree>
+                                  <actions>
+                                    <create>
+                                      <path>self::node()</path>
+                                      <context>parent</context>
+                                      <schema/>
+                                      <type>xml</type>
+                                      <prefix>NULL</prefix>
+                                      <value>&lt;dateOther encoding="iso8601"
                                                   point="end"&gt;%value%&lt;/dateOther&gt;</value>
-                            </create>
-                            <read>
-                              <path>mods:dateOther[@point='end']</path>
-                              <context>parent</context>
-                            </read>
-                            <update>
-                              <path>self::node()</path>
-                              <context>self</context>
-                            </update>
-                            <delete>NULL</delete>
-                          </actions>
-                        </properties>
-                        <children/>
-                      </element>
-                      <element name="otherEndQualifier">
-                        <properties>
-                          <type>select</type>
-                          <access>TRUE</access>
-                          <collapsed>FALSE</collapsed>
-                          <collapsible>FALSE</collapsible>
-                          <description>Use with the end of an unspecified date range if it is approximate, inferred, or questionable.</description>
-                          <disabled>FALSE</disabled>
-                          <executes_submit_callback>FALSE</executes_submit_callback>
-                          <multiple>FALSE</multiple>
-                          <options>
-                            <index key="">none</index>
-                            <approximate>approximate</approximate>
-                            <inferred>inferred</inferred>
-                            <questionable>questionable</questionable>
-                          </options>
-                          <required>FALSE</required>
-                          <resizable>FALSE</resizable>
-                          <title>Qualifier</title>
-                          <tree>TRUE</tree>
-                          <actions>
-                            <create>
-                              <path>mods:dateOther[@point='end']</path>
-                              <context>parent</context>
-                              <schema/>
-                              <type>attribute</type>
-                              <prefix>NULL</prefix>
-                              <value>qualifier</value>
-                            </create>
-                            <read>
-                              <path>mods:dateOther[@point='end']/@qualifier</path>
-                              <context>parent</context>
-                            </read>
-                            <update>
-                              <path>mods:dateOther[@point='end']/@qualifier</path>
-                              <context>parent</context>
-                            </update>
-                            <delete>NULL</delete>
-                          </actions>
-                        </properties>
-                        <children/>
+                                    </create>
+                                    <read>
+                                      <path>mods:dateOther[@point='end']</path>
+                                      <context>parent</context>
+                                    </read>
+                                    <update>
+                                      <path>self::node()</path>
+                                      <context>self</context>
+                                    </update>
+                                    <delete>NULL</delete>
+                                  </actions>
+                                </properties>
+                                <children/>
+                              </element>
+                              <element name="otherEndQualifier">
+                                <properties>
+                                  <type>select</type>
+                                  <access>TRUE</access>
+                                  <collapsed>FALSE</collapsed>
+                                  <collapsible>FALSE</collapsible>
+                                  <description>Use with the end of an unspecified date range if it is approximate, inferred, or questionable.</description>
+                                  <disabled>FALSE</disabled>
+                                  <executes_submit_callback>FALSE</executes_submit_callback>
+                                  <multiple>FALSE</multiple>
+                                  <options>
+                                    <index key="">none</index>
+                                    <approximate>approximate</approximate>
+                                    <inferred>inferred</inferred>
+                                    <questionable>questionable</questionable>
+                                  </options>
+                                  <required>FALSE</required>
+                                  <resizable>FALSE</resizable>
+                                  <title>Qualifier</title>
+                                  <tree>TRUE</tree>
+                                  <actions>
+                                    <create>
+                                      <path>mods:dateOther[@point='end']</path>
+                                      <context>parent</context>
+                                      <schema/>
+                                      <type>attribute</type>
+                                      <prefix>NULL</prefix>
+                                      <value>qualifier</value>
+                                    </create>
+                                    <read>
+                                      <path>mods:dateOther[@point='end']/@qualifier</path>
+                                      <context>parent</context>
+                                    </read>
+                                    <update>
+                                      <path>mods:dateOther[@point='end']/@qualifier</path>
+                                      <context>parent</context>
+                                    </update>
+                                    <delete>NULL</delete>
+                                  </actions>
+                                </properties>
+                                <children/>
+                              </element>
+                            </children>
+                          </element>
+                        </children>
                       </element>
                     </children>
                   </element>
@@ -10133,6 +10193,42 @@ Ensure at least one name is associated with the role "depositor".</description>
                     <update>
                       <path>self::node()</path>
                       <context>self</context>
+                    </update>
+                    <delete>NULL</delete>
+                  </actions>
+                </properties>
+                <children/>
+              </element>
+              <element name="generalNote">
+                <properties>
+                  <type>textarea</type>
+                  <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
+                  <description>Contains a general note with any relevant information relating to copyright information for the resource.</description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
+                  <required>FALSE</required>
+                  <resizable>FALSE</resizable>
+                  <title>Note</title>
+                  <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>parent</context>
+                      <schema/>
+                      <type>element</type>
+                      <prefix>copyrightMD</prefix>
+                      <value>copyrightMD:general.note</value>
+                    </create>
+                    <read>
+                      <path>copyrightMD:general.note</path>
+                      <context>parent</context>
+                    </read>
+                    <update>
+                      <path>self::node()</path>
+                      <context>parent</context>
                     </update>
                     <delete>NULL</delete>
                   </actions>
