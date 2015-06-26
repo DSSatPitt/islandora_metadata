@@ -1974,7 +1974,7 @@ Ensure at least one name is associated with the role "depositor".</description>
                       <tree>TRUE</tree>
                     </properties>
                     <children>
-                      <element name="originTabDO">
+                      <element name="otherDateTab">
                         <properties>
                           <type>tabs</type>
                           <access>TRUE</access>
@@ -1997,7 +1997,7 @@ Ensure at least one name is associated with the role "depositor".</description>
                           </actions>
                         </properties>
                         <children>
-                          <element name="originPanelDO">
+                          <element name="otherDatePanel">
                             <properties>
                               <type>tabpanel</type>
                               <access>TRUE</access>
@@ -2566,7 +2566,7 @@ Ensure at least one name is associated with the role "depositor".</description>
                       </element>
                     </children>
                   </element>
-                  <element name="AdditionaldateTab">
+                  <element name="ADDITIONALdate">
                     <properties>
                       <type>fieldset</type>
                       <access>TRUE</access>
@@ -5892,7 +5892,7 @@ Ensure at least one name is associated with the role "depositor".</description>
               </element>
             </children>
           </element>
-          <element name="ADDITIONALTemporalGenre">
+          <element name="ADDITIONALsubjectTemporalGenre">
             <properties>
               <type>fieldset</type>
               <access>TRUE</access>
@@ -6839,7 +6839,7 @@ Ensure at least one name is associated with the role "depositor".</description>
                       </element>
                     </children>
                   </element>
-                  <element name="AdditionaltitleInfoSub">
+                  <element name="ADDITIONALtitleInfoSub">
                     <properties>
                       <type>fieldset</type>
                       <access>TRUE</access>
@@ -8023,7 +8023,7 @@ Ensure at least one name is associated with the role "depositor".</description>
                     </properties>
                     <children/>
                   </element>
-                  <element name="AdditionalrelTitleInfo">
+                  <element name="ADDITIONALrelTitleInfo">
                     <properties>
                       <type>fieldset</type>
                       <access>TRUE</access>
@@ -8395,7 +8395,7 @@ Ensure at least one name is associated with the role "depositor".</description>
                   </element>
                 </children>
               </element>
-              <element name="ADDITIONALRelatedItem">
+              <element name="ADDITIONALrelatedItem">
                 <properties>
                   <type>fieldset</type>
                   <access>TRUE</access>
@@ -8421,7 +8421,7 @@ Ensure at least one name is associated with the role "depositor".</description>
                       <multiple>FALSE</multiple>
                       <required>FALSE</required>
                       <resizable>FALSE</resizable>
-                      <title>Name of Related Item</title>
+                      <title>Name Associated with Related Item</title>
                       <tree>TRUE</tree>
                       <actions>
                         <create>
@@ -8667,7 +8667,7 @@ Ensure at least one name is associated with the role "depositor".</description>
                           </element>
                         </children>
                       </element>
-                      <element name="AdditionalrelNameInfo">
+                      <element name="ADDITIONALrelNameInfo">
                         <properties>
                           <type>fieldset</type>
                           <access>TRUE</access>
@@ -9631,7 +9631,7 @@ Ensure at least one name is associated with the role "depositor".</description>
                           </element>
                         </children>
                       </element>
-                      <element name="AdditionalrelPhysicalDescription">
+                      <element name="ADDITIONALrelPhysicalDescription">
                         <properties>
                           <type>fieldset</type>
                           <access>TRUE</access>
@@ -10235,6 +10235,121 @@ Ensure at least one name is associated with the role "depositor".</description>
                 </properties>
                 <children/>
               </element>
+              <element name="rightsHolder">
+                <properties>
+                  <type>fieldset</type>
+                  <access>TRUE</access>
+                  <collapsed>TRUE</collapsed>
+                  <collapsible>TRUE</collapsible>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
+                  <required>FALSE</required>
+                  <resizable>FALSE</resizable>
+                  <title>Rights Holder</title>
+                  <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>parent</context>
+                      <schema/>
+                      <type>element</type>
+                      <prefix>copyrightMD</prefix>
+                      <value>copyrightMD:rights.holder</value>
+                    </create>
+                    <read>
+                      <path>copyrightMD:rights.holder</path>
+                      <context>parent</context>
+                    </read>
+                    <update>NULL</update>
+                    <delete>NULL</delete>
+                  </actions>
+                </properties>
+                <children>
+                  <element name="nameRightsHolder">
+                    <properties>
+                      <type>textfield</type>
+                      <access>TRUE</access>
+                      <collapsed>FALSE</collapsed>
+                      <collapsible>FALSE</collapsible>
+                      <disabled>FALSE</disabled>
+                      <executes_submit_callback>FALSE</executes_submit_callback>
+                      <multiple>FALSE</multiple>
+                      <options>
+                        <index key=""/>
+                        <unknown>unknown</unknown>
+                        <published>published</published>
+                        <unpublished>unpublished</unpublished>
+                      </options>
+                      <required>FALSE</required>
+                      <resizable>FALSE</resizable>
+                      <title>Name</title>
+                      <tree>TRUE</tree>
+                      <actions>
+                        <create>
+                          <path>self::node()</path>
+                          <context>parent</context>
+                          <schema/>
+                          <type>element</type>
+                          <prefix>copyrightMD</prefix>
+                          <value>copyrightMD:name</value>
+                        </create>
+                        <read>
+                          <path>copyrightMD:name</path>
+                          <context>parent</context>
+                        </read>
+                        <update>
+                          <path>self::node()</path>
+                          <context>self</context>
+                        </update>
+                        <delete>NULL</delete>
+                      </actions>
+                    </properties>
+                    <children/>
+                  </element>
+                  <element name="contactRightsHolder">
+                    <properties>
+                      <type>textfield</type>
+                      <access>TRUE</access>
+                      <collapsed>FALSE</collapsed>
+                      <collapsible>FALSE</collapsible>
+                      <disabled>FALSE</disabled>
+                      <executes_submit_callback>FALSE</executes_submit_callback>
+                      <multiple>FALSE</multiple>
+                      <options>
+                        <index key=""/>
+                        <unknown>unknown</unknown>
+                        <published>published</published>
+                        <unpublished>unpublished</unpublished>
+                      </options>
+                      <required>FALSE</required>
+                      <resizable>FALSE</resizable>
+                      <title>Contact</title>
+                      <tree>TRUE</tree>
+                      <actions>
+                        <create>
+                          <path>self::node()</path>
+                          <context>parent</context>
+                          <schema/>
+                          <type>element</type>
+                          <prefix>copyrightMD</prefix>
+                          <value>copyrightMD:contact</value>
+                        </create>
+                        <read>
+                          <path>copyrightMD:contact</path>
+                          <context>parent</context>
+                        </read>
+                        <update>
+                          <path>self::node()</path>
+                          <context>self</context>
+                        </update>
+                        <delete>NULL</delete>
+                      </actions>
+                    </properties>
+                    <children/>
+                  </element>
+                </children>
+              </element>
             </children>
           </element>
         </children>
@@ -10260,7 +10375,7 @@ Ensure at least one name is associated with the role "depositor".</description>
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>A description of the intellectual level of the audience for which the resource is intended. Use this element whenever there is a specific audience for a resource (for example, a text marked up specifically for historians). Do not use to indicate audiences to whom access or use of the resource is limited; include this information in the &lt;accessCondition&gt; element.</description>
+              <description>A description of the intellectual level of the audience for which the resource is intended. Use this element whenever there is a specific audience for a resource (for example, a text marked up specifically for historians). Do not use to indicate audiences to whom access or use of the resource is limited; include this information under Access Condition.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
