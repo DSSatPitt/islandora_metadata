@@ -1687,41 +1687,6 @@ Ensure at least one name is associated with the role "depositor".</description>
                         </properties>
                         <children/>
                       </element>
-                      <element name="dateCreatedEncoding">
-                        <properties>
-                          <type>textfield</type>
-                          <access>TRUE</access>
-                          <collapsed>FALSE</collapsed>
-                          <collapsible>FALSE</collapsible>
-                          <disabled>FALSE</disabled>
-                          <executes_submit_callback>FALSE</executes_submit_callback>
-                          <multiple>FALSE</multiple>
-                          <required>FALSE</required>
-                          <resizable>FALSE</resizable>
-                          <title>Encoding</title>
-                          <tree>TRUE</tree>
-                          <actions>
-                            <create>
-                              <path>mods:dateCreated</path>
-                              <context>parent</context>
-                              <schema/>
-                              <type>attribute</type>
-                              <prefix>NULL</prefix>
-                              <value>encoding</value>
-                            </create>
-                            <read>
-                              <path>mods:dateCreated/@encoding</path>
-                              <context>parent</context>
-                            </read>
-                            <update>
-                              <path>self::node()</path>
-                              <context>self</context>
-                            </update>
-                            <delete>NULL</delete>
-                          </actions>
-                        </properties>
-                        <children/>
-                      </element>
                       <element name="dateCreatedKeyDate">
                         <properties>
                           <type>select</type>
@@ -2272,260 +2237,6 @@ Ensure at least one name is associated with the role "depositor".</description>
                       </element>
                     </children>
                   </element>
-                  <element name="dateIssuedSet">
-                    <properties>
-                      <type>fieldset</type>
-                      <access>TRUE</access>
-                      <collapsed>FALSE</collapsed>
-                      <collapsible>TRUE</collapsible>
-                      <description>The date the object was issued.  Prefer for formally published materials. For reformatted material, use the date of the source, not the digital version. Enter date in the format YYYY-MM-DD. </description>
-                      <disabled>FALSE</disabled>
-                      <executes_submit_callback>FALSE</executes_submit_callback>
-                      <multiple>FALSE</multiple>
-                      <required>FALSE</required>
-                      <resizable>FALSE</resizable>
-                      <title>Date Issued</title>
-                      <tree>TRUE</tree>
-                    </properties>
-                    <children>
-                      <element name="issueDate">
-                        <properties>
-                          <type>textfield</type>
-                          <access>TRUE</access>
-                          <collapsed>FALSE</collapsed>
-                          <collapsible>FALSE</collapsible>
-                          <description>Use with single date issued.</description>
-                          <disabled>FALSE</disabled>
-                          <executes_submit_callback>FALSE</executes_submit_callback>
-                          <multiple>FALSE</multiple>
-                          <required>FALSE</required>
-                          <resizable>FALSE</resizable>
-                          <title>Date Issued</title>
-                          <tree>TRUE</tree>
-                          <actions>
-                            <create>
-                              <path>self::node()</path>
-                              <context>parent</context>
-                              <schema/>
-                              <type>xml</type>
-                              <prefix>NULL</prefix>
-                              <value>&lt;dateIssued encoding="iso8601"&gt;%value%&lt;/dateIssued&gt;</value>
-                            </create>
-                            <read>
-                              <path>mods:dateIssued[not(@point)]</path>
-                              <context>parent</context>
-                            </read>
-                            <update>
-                              <path>self::node()</path>
-                              <context>self</context>
-                            </update>
-                            <delete>NULL</delete>
-                          </actions>
-                        </properties>
-                        <children/>
-                      </element>
-                      <element name="issuedQualifier">
-                        <properties>
-                          <type>select</type>
-                          <access>TRUE</access>
-                          <collapsed>FALSE</collapsed>
-                          <collapsible>FALSE</collapsible>
-                          <description>Use with single date issued that is approximate, inferred, or questionable.</description>
-                          <disabled>FALSE</disabled>
-                          <executes_submit_callback>FALSE</executes_submit_callback>
-                          <multiple>FALSE</multiple>
-                          <options>
-                            <index key="">none</index>
-                            <approximate>approximate</approximate>
-                            <inferred>inferred</inferred>
-                            <questionable>questionable</questionable>
-                          </options>
-                          <required>FALSE</required>
-                          <resizable>FALSE</resizable>
-                          <title>Qualifier</title>
-                          <tree>TRUE</tree>
-                          <actions>
-                            <create>
-                              <path>mods:dateIssued</path>
-                              <context>parent</context>
-                              <schema/>
-                              <type>attribute</type>
-                              <prefix>NULL</prefix>
-                              <value>qualifier</value>
-                            </create>
-                            <read>
-                              <path>mods:dateIssued[not(@point)]/@qualifier</path>
-                              <context>parent</context>
-                            </read>
-                            <update>
-                              <path>self::node()</path>
-                              <context>self</context>
-                            </update>
-                            <delete>NULL</delete>
-                          </actions>
-                        </properties>
-                        <children/>
-                      </element>
-                      <element name="issuedStartDate">
-                        <properties>
-                          <type>textfield</type>
-                          <access>TRUE</access>
-                          <collapsed>FALSE</collapsed>
-                          <collapsible>FALSE</collapsible>
-                          <description>Use for start of date range.</description>
-                          <disabled>FALSE</disabled>
-                          <executes_submit_callback>FALSE</executes_submit_callback>
-                          <multiple>FALSE</multiple>
-                          <required>FALSE</required>
-                          <resizable>FALSE</resizable>
-                          <title>Start Date</title>
-                          <tree>TRUE</tree>
-                          <actions>
-                            <create>
-                              <path>self::node()</path>
-                              <context>parent</context>
-                              <schema/>
-                              <type>xml</type>
-                              <prefix>NULL</prefix>
-                              <value>&lt;dateIssued encoding="iso8601"
-                                                  point="start"&gt;%value%&lt;/dateIssued&gt;</value>
-                            </create>
-                            <read>
-                              <path>mods:dateIssued[@point='start']</path>
-                              <context>parent</context>
-                            </read>
-                            <update>
-                              <path>self::node()</path>
-                              <context>self</context>
-                            </update>
-                            <delete>NULL</delete>
-                          </actions>
-                        </properties>
-                        <children/>
-                      </element>
-                      <element name="issuedStartQualifier">
-                        <properties>
-                          <type>select</type>
-                          <access>TRUE</access>
-                          <collapsed>FALSE</collapsed>
-                          <collapsible>FALSE</collapsible>
-                          <description>Use with start of date range that is approximate, inferred, or questionable.</description>
-                          <disabled>FALSE</disabled>
-                          <executes_submit_callback>FALSE</executes_submit_callback>
-                          <multiple>FALSE</multiple>
-                          <options>
-                            <index key="">none</index>
-                            <approximate>approximate</approximate>
-                            <inferred>inferred</inferred>
-                            <questionable>questionable</questionable>
-                          </options>
-                          <required>FALSE</required>
-                          <resizable>FALSE</resizable>
-                          <title>Qualifier</title>
-                          <tree>TRUE</tree>
-                          <actions>
-                            <create>
-                              <path>mods:dateIssued[@point='start']</path>
-                              <context>parent</context>
-                              <schema/>
-                              <type>attribute</type>
-                              <prefix>NULL</prefix>
-                              <value>qualifier</value>
-                            </create>
-                            <read>
-                              <path>mods:dateIssued[@point='start']/@qualifier</path>
-                              <context>parent</context>
-                            </read>
-                            <update>
-                              <path>mods:dateIssued[@point='start']/@qualifier</path>
-                              <context>parent</context>
-                            </update>
-                            <delete>NULL</delete>
-                          </actions>
-                        </properties>
-                        <children/>
-                      </element>
-                      <element name="issuedEndDate">
-                        <properties>
-                          <type>textfield</type>
-                          <access>TRUE</access>
-                          <collapsed>FALSE</collapsed>
-                          <collapsible>FALSE</collapsible>
-                          <description>Use for end of date range.</description>
-                          <disabled>FALSE</disabled>
-                          <executes_submit_callback>FALSE</executes_submit_callback>
-                          <multiple>FALSE</multiple>
-                          <required>FALSE</required>
-                          <resizable>FALSE</resizable>
-                          <title>End Date</title>
-                          <tree>TRUE</tree>
-                          <actions>
-                            <create>
-                              <path>self::node()</path>
-                              <context>parent</context>
-                              <schema/>
-                              <type>xml</type>
-                              <prefix>NULL</prefix>
-                              <value>&lt;dateIssued encoding="iso8601"
-                                                  point="end"&gt;%value%&lt;/dateIssued&gt;</value>
-                            </create>
-                            <read>
-                              <path>mods:dateIssued[@point='end']</path>
-                              <context>parent</context>
-                            </read>
-                            <update>
-                              <path>self::node()</path>
-                              <context>self</context>
-                            </update>
-                            <delete>NULL</delete>
-                          </actions>
-                        </properties>
-                        <children/>
-                      </element>
-                      <element name="issuedEndQualifier">
-                        <properties>
-                          <type>select</type>
-                          <access>TRUE</access>
-                          <collapsed>FALSE</collapsed>
-                          <collapsible>FALSE</collapsible>
-                          <description>Use with end of date range that is approximate, inferred, or questionable.</description>
-                          <disabled>FALSE</disabled>
-                          <executes_submit_callback>FALSE</executes_submit_callback>
-                          <multiple>FALSE</multiple>
-                          <options>
-                            <index key="">none</index>
-                            <questionable>questionable</questionable>
-                            <approximate>approximate</approximate>
-                            <inferred>inferred</inferred>
-                          </options>
-                          <required>FALSE</required>
-                          <resizable>FALSE</resizable>
-                          <title>Qualifier</title>
-                          <tree>TRUE</tree>
-                          <actions>
-                            <create>
-                              <path>mods:dateIssued[@point='end']</path>
-                              <context>parent</context>
-                              <schema/>
-                              <type>attribute</type>
-                              <prefix>NULL</prefix>
-                              <value>qualifier</value>
-                            </create>
-                            <read>
-                              <path>mods:dateIssued[@point='end']/@qualifier</path>
-                              <context>parent</context>
-                            </read>
-                            <update>
-                              <path>mods:dateIssued[@point='end']/@qualifier</path>
-                              <context>parent</context>
-                            </update>
-                            <delete>NULL</delete>
-                          </actions>
-                        </properties>
-                        <children/>
-                      </element>
-                    </children>
-                  </element>
                   <element name="ADDITIONALdate">
                     <properties>
                       <type>fieldset</type>
@@ -2537,10 +2248,264 @@ Ensure at least one name is associated with the role "depositor".</description>
                       <multiple>FALSE</multiple>
                       <required>FALSE</required>
                       <resizable>FALSE</resizable>
-                      <title>Additional Dates: Copyright, Captured, Valid, Modified</title>
+                      <title>Additional Dates: Issued, Copyright, Captured, Valid, Modified</title>
                       <tree>TRUE</tree>
                     </properties>
                     <children>
+                      <element name="dateIssuedSet">
+                        <properties>
+                          <type>fieldset</type>
+                          <access>TRUE</access>
+                          <collapsed>TRUE</collapsed>
+                          <collapsible>TRUE</collapsible>
+                          <description>The date the object was issued.  Prefer for formally published materials. For reformatted material, use the date of the source, not the digital version. Enter date in the format YYYY-MM-DD. </description>
+                          <disabled>FALSE</disabled>
+                          <executes_submit_callback>FALSE</executes_submit_callback>
+                          <multiple>FALSE</multiple>
+                          <required>FALSE</required>
+                          <resizable>FALSE</resizable>
+                          <title>Issued</title>
+                          <tree>TRUE</tree>
+                        </properties>
+                        <children>
+                          <element name="issueDate">
+                            <properties>
+                              <type>textfield</type>
+                              <access>TRUE</access>
+                              <collapsed>FALSE</collapsed>
+                              <collapsible>FALSE</collapsible>
+                              <description>Use with single date issued.</description>
+                              <disabled>FALSE</disabled>
+                              <executes_submit_callback>FALSE</executes_submit_callback>
+                              <multiple>FALSE</multiple>
+                              <required>FALSE</required>
+                              <resizable>FALSE</resizable>
+                              <title>Date Issued</title>
+                              <tree>TRUE</tree>
+                              <actions>
+                                <create>
+                                  <path>self::node()</path>
+                                  <context>parent</context>
+                                  <schema/>
+                                  <type>xml</type>
+                                  <prefix>NULL</prefix>
+                                  <value>&lt;dateIssued encoding="iso8601"&gt;%value%&lt;/dateIssued&gt;</value>
+                                </create>
+                                <read>
+                                  <path>mods:dateIssued[not(@point)]</path>
+                                  <context>parent</context>
+                                </read>
+                                <update>
+                                  <path>self::node()</path>
+                                  <context>self</context>
+                                </update>
+                                <delete>NULL</delete>
+                              </actions>
+                            </properties>
+                            <children/>
+                          </element>
+                          <element name="issuedQualifier">
+                            <properties>
+                              <type>select</type>
+                              <access>TRUE</access>
+                              <collapsed>FALSE</collapsed>
+                              <collapsible>FALSE</collapsible>
+                              <description>Use with single date issued that is approximate, inferred, or questionable.</description>
+                              <disabled>FALSE</disabled>
+                              <executes_submit_callback>FALSE</executes_submit_callback>
+                              <multiple>FALSE</multiple>
+                              <options>
+                                <index key="">none</index>
+                                <approximate>approximate</approximate>
+                                <inferred>inferred</inferred>
+                                <questionable>questionable</questionable>
+                              </options>
+                              <required>FALSE</required>
+                              <resizable>FALSE</resizable>
+                              <title>Qualifier</title>
+                              <tree>TRUE</tree>
+                              <actions>
+                                <create>
+                                  <path>mods:dateIssued</path>
+                                  <context>parent</context>
+                                  <schema/>
+                                  <type>attribute</type>
+                                  <prefix>NULL</prefix>
+                                  <value>qualifier</value>
+                                </create>
+                                <read>
+                                  <path>mods:dateIssued[not(@point)]/@qualifier</path>
+                                  <context>parent</context>
+                                </read>
+                                <update>
+                                  <path>self::node()</path>
+                                  <context>self</context>
+                                </update>
+                                <delete>NULL</delete>
+                              </actions>
+                            </properties>
+                            <children/>
+                          </element>
+                          <element name="issuedStartDate">
+                            <properties>
+                              <type>textfield</type>
+                              <access>TRUE</access>
+                              <collapsed>FALSE</collapsed>
+                              <collapsible>FALSE</collapsible>
+                              <description>Use for start of date range.</description>
+                              <disabled>FALSE</disabled>
+                              <executes_submit_callback>FALSE</executes_submit_callback>
+                              <multiple>FALSE</multiple>
+                              <required>FALSE</required>
+                              <resizable>FALSE</resizable>
+                              <title>Start Date</title>
+                              <tree>TRUE</tree>
+                              <actions>
+                                <create>
+                                  <path>self::node()</path>
+                                  <context>parent</context>
+                                  <schema/>
+                                  <type>xml</type>
+                                  <prefix>NULL</prefix>
+                                  <value>&lt;dateIssued encoding="iso8601"
+                                                  point="start"&gt;%value%&lt;/dateIssued&gt;</value>
+                                </create>
+                                <read>
+                                  <path>mods:dateIssued[@point='start']</path>
+                                  <context>parent</context>
+                                </read>
+                                <update>
+                                  <path>self::node()</path>
+                                  <context>self</context>
+                                </update>
+                                <delete>NULL</delete>
+                              </actions>
+                            </properties>
+                            <children/>
+                          </element>
+                          <element name="issuedStartQualifier">
+                            <properties>
+                              <type>select</type>
+                              <access>TRUE</access>
+                              <collapsed>FALSE</collapsed>
+                              <collapsible>FALSE</collapsible>
+                              <description>Use with start of date range that is approximate, inferred, or questionable.</description>
+                              <disabled>FALSE</disabled>
+                              <executes_submit_callback>FALSE</executes_submit_callback>
+                              <multiple>FALSE</multiple>
+                              <options>
+                                <index key="">none</index>
+                                <approximate>approximate</approximate>
+                                <inferred>inferred</inferred>
+                                <questionable>questionable</questionable>
+                              </options>
+                              <required>FALSE</required>
+                              <resizable>FALSE</resizable>
+                              <title>Qualifier</title>
+                              <tree>TRUE</tree>
+                              <actions>
+                                <create>
+                                  <path>mods:dateIssued[@point='start']</path>
+                                  <context>parent</context>
+                                  <schema/>
+                                  <type>attribute</type>
+                                  <prefix>NULL</prefix>
+                                  <value>qualifier</value>
+                                </create>
+                                <read>
+                                  <path>mods:dateIssued[@point='start']/@qualifier</path>
+                                  <context>parent</context>
+                                </read>
+                                <update>
+                                  <path>mods:dateIssued[@point='start']/@qualifier</path>
+                                  <context>parent</context>
+                                </update>
+                                <delete>NULL</delete>
+                              </actions>
+                            </properties>
+                            <children/>
+                          </element>
+                          <element name="issuedEndDate">
+                            <properties>
+                              <type>textfield</type>
+                              <access>TRUE</access>
+                              <collapsed>FALSE</collapsed>
+                              <collapsible>FALSE</collapsible>
+                              <description>Use for end of date range.</description>
+                              <disabled>FALSE</disabled>
+                              <executes_submit_callback>FALSE</executes_submit_callback>
+                              <multiple>FALSE</multiple>
+                              <required>FALSE</required>
+                              <resizable>FALSE</resizable>
+                              <title>End Date</title>
+                              <tree>TRUE</tree>
+                              <actions>
+                                <create>
+                                  <path>self::node()</path>
+                                  <context>parent</context>
+                                  <schema/>
+                                  <type>xml</type>
+                                  <prefix>NULL</prefix>
+                                  <value>&lt;dateIssued encoding="iso8601"
+                                                  point="end"&gt;%value%&lt;/dateIssued&gt;</value>
+                                </create>
+                                <read>
+                                  <path>mods:dateIssued[@point='end']</path>
+                                  <context>parent</context>
+                                </read>
+                                <update>
+                                  <path>self::node()</path>
+                                  <context>self</context>
+                                </update>
+                                <delete>NULL</delete>
+                              </actions>
+                            </properties>
+                            <children/>
+                          </element>
+                          <element name="issuedEndQualifier">
+                            <properties>
+                              <type>select</type>
+                              <access>TRUE</access>
+                              <collapsed>FALSE</collapsed>
+                              <collapsible>FALSE</collapsible>
+                              <description>Use with end of date range that is approximate, inferred, or questionable.</description>
+                              <disabled>FALSE</disabled>
+                              <executes_submit_callback>FALSE</executes_submit_callback>
+                              <multiple>FALSE</multiple>
+                              <options>
+                                <index key="">none</index>
+                                <questionable>questionable</questionable>
+                                <approximate>approximate</approximate>
+                                <inferred>inferred</inferred>
+                              </options>
+                              <required>FALSE</required>
+                              <resizable>FALSE</resizable>
+                              <title>Qualifier</title>
+                              <tree>TRUE</tree>
+                              <actions>
+                                <create>
+                                  <path>mods:dateIssued[@point='end']</path>
+                                  <context>parent</context>
+                                  <schema/>
+                                  <type>attribute</type>
+                                  <prefix>NULL</prefix>
+                                  <value>qualifier</value>
+                                </create>
+                                <read>
+                                  <path>mods:dateIssued[@point='end']/@qualifier</path>
+                                  <context>parent</context>
+                                </read>
+                                <update>
+                                  <path>mods:dateIssued[@point='end']/@qualifier</path>
+                                  <context>parent</context>
+                                </update>
+                                <delete>NULL</delete>
+                              </actions>
+                            </properties>
+                            <children/>
+                          </element>
+                        </children>
+                      </element>
                       <element name="dateCopyrightSet">
                         <properties>
                           <type>fieldset</type>
@@ -8403,7 +8368,7 @@ Ensure at least one name is associated with the role "depositor".</description>
                   <multiple>FALSE</multiple>
                   <required>FALSE</required>
                   <resizable>FALSE</resizable>
-                  <title>Related Item: Name, Origin, Physical Description, Location</title>
+                  <title>Related Item: Name, Publication/Dates, Physical Description, Location</title>
                   <tree>TRUE</tree>
                 </properties>
                 <children>
