@@ -3703,7 +3703,11 @@ Ensure at least one name is associated with the role "depositor".</description>
                   <actions>
                     <create>NULL</create>
                     <read>
+<<<<<<< HEAD
+                      <path>mods:languageTerm[@type='text']/@authority | mods:languageTerm[@type='code']/@authority</path>
+=======
                       <path>mods:languageTerm[@type='text']/@authority</path>
+>>>>>>> 98359b7e11704177f7888017f57053df4d3a3650
                       <context>parent</context>
                     </read>
                     <update>
@@ -3867,7 +3871,11 @@ Ensure at least one name is associated with the role "depositor".</description>
                       <value>form</value>
                     </create>
                     <read>
+<<<<<<< HEAD
+                      <path>/mods:mods/mods:physicalDescription/mods:form</path>
+=======
                       <path>/mods:mods/mods:physicalDescription/mods:form[not(@*)]</path>
+>>>>>>> 98359b7e11704177f7888017f57053df4d3a3650
                       <context>document</context>
                     </read>
                     <update>
@@ -7602,6 +7610,80 @@ Ensure at least one name is associated with the role "depositor".</description>
                       </element>
                     </children>
                   </element>
+<<<<<<< HEAD
+                  <element name="geocode">
+                    <properties>
+                      <type>fieldset</type>
+                      <access>TRUE</access>
+                      <collapsed>FALSE</collapsed>
+                      <collapsible>FALSE</collapsible>
+                      <disabled>FALSE</disabled>
+                      <executes_submit_callback>FALSE</executes_submit_callback>
+                      <multiple>FALSE</multiple>
+                      <required>FALSE</required>
+                      <resizable>FALSE</resizable>
+                      <title>Geographic Code</title>
+                      <tree>TRUE</tree>
+                      <actions>
+                        <create>
+                          <path>self::node()</path>
+                          <context>parent</context>
+                          <schema/>
+                          <type>element</type>
+                          <prefix>NULL</prefix>
+                          <value>geographicCode</value>
+                        </create>
+                        <read>
+                          <path>mods:geographicCode</path>
+                          <context>parent</context>
+                        </read>
+                        <update>
+                          <path>self::node()</path>
+                          <context>self</context>
+                        </update>
+                        <delete>NULL</delete>
+                      </actions>
+                    </properties>
+                    <children>
+                      <element name="geocode">
+                        <properties>
+                          <type>textfield</type>
+                          <access>TRUE</access>
+                          <collapsed>FALSE</collapsed>
+                          <collapsible>FALSE</collapsible>
+                          <disabled>FALSE</disabled>
+                          <executes_submit_callback>FALSE</executes_submit_callback>
+                          <multiple>FALSE</multiple>
+                          <required>FALSE</required>
+                          <resizable>FALSE</resizable>
+                          <title>Geographic Code</title>
+                          <tree>TRUE</tree>
+                          <actions>
+                            <create>
+                              <path>self::node()</path>
+                              <context>parent</context>
+                              <schema/>
+                              <type>element</type>
+                              <prefix>NULL</prefix>
+                              <value>geographicCode</value>
+                            </create>
+                            <read>
+                              <path>mods:geographicCode</path>
+                              <context>parent</context>
+                            </read>
+                            <update>
+                              <path>self::node()</path>
+                              <context>self</context>
+                            </update>
+                            <delete>NULL</delete>
+                          </actions>
+                        </properties>
+                        <children/>
+                      </element>
+                    </children>
+                  </element>
+=======
+>>>>>>> 98359b7e11704177f7888017f57053df4d3a3650
                 </children>
               </element>
             </children>
@@ -9879,7 +9961,11 @@ Ensure at least one name is associated with the role "depositor".</description>
                           <actions>
                             <create>
                               <path>self::node()</path>
+<<<<<<< HEAD
+                              <context>parent</context>
+=======
                               <context>document</context>
+>>>>>>> 98359b7e11704177f7888017f57053df4d3a3650
                               <schema/>
                               <type>attribute</type>
                               <prefix>NULL</prefix>
@@ -10190,7 +10276,11 @@ Ensure at least one name is associated with the role "depositor".</description>
                     </read>
                     <update>
                       <path>self::node()</path>
+<<<<<<< HEAD
+                      <context>self</context>
+=======
                       <context>parent</context>
+>>>>>>> 98359b7e11704177f7888017f57053df4d3a3650
                     </update>
                     <delete>NULL</delete>
                   </actions>

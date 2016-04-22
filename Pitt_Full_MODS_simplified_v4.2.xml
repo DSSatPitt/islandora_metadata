@@ -7181,7 +7181,11 @@ Ensure at least one name is associated with the role "depositor".</description>
                           <actions>
                             <create>
                               <path>self::node()</path>
+<<<<<<< HEAD
+                              <context>parent</context>
+=======
                               <context>document</context>
+>>>>>>> 98359b7e11704177f7888017f57053df4d3a3650
                               <schema/>
                               <type>attribute</type>
                               <prefix>NULL</prefix>
@@ -7494,7 +7498,11 @@ Ensure at least one name is associated with the role "depositor".</description>
                     </read>
                     <update>
                       <path>self::node()</path>
+<<<<<<< HEAD
+                      <context>self</context>
+=======
                       <context>parent</context>
+>>>>>>> 98359b7e11704177f7888017f57053df4d3a3650
                     </update>
                     <delete>NULL</delete>
                   </actions>
